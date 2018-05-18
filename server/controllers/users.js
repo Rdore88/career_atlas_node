@@ -12,20 +12,23 @@ const createUser = (req, res) => {
     res.send(error)
   })
 }
-
+//check into using session so req.user is a thing
+//also change this to req.body for now
 const getUser = (req, res) => {
-  User.find({_id: req.query.id}, (err, user) => {
-    if (err) { res.send(err) }
+  User.findOne({_id: req.query.id}, 'username jobs', function(err, user) {
+    if (!user) {
+      return res.send("couldn't find user")
+    }
     res.send(user)
   })
 }
 
 const deleteUser = (req, res) => {
-  User.deleteOne({_id: req.body.id}, function(err){
+  User.deleteOne({_id: req.body.id}, function(err, prod){
     if (err) {
       res.send(err)
     } else {
-      res.send('deleted')
+      res.send(prod)
     }
   })
 }
