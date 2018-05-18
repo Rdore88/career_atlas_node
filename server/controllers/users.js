@@ -20,6 +20,16 @@ const getUser = (req, res) => {
   })
 }
 
+const deleteUser = (req, res) => {
+  User.deleteOne({_id: req.body.id}, function(err){
+    if (err) {
+      res.send(err)
+    } else {
+      res.send('deleted')
+    }
+  })
+}
+
 const getAllUsers = (req, res) => {
   User.find({}, (err, users) => {
     if (err) { res.send(err) }
@@ -31,4 +41,5 @@ module.exports = {
   createUser,
   getUser,
   getAllUsers,
+  deleteUser,
 }
