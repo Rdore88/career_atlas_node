@@ -54,4 +54,23 @@ UserSchema.methods.addJob = function(title, company, job_key, longitude, latitud
   })
 }
 
+UserSchema.methods.deleteJob = function(job_key) {
+  return new Promise ((resolve, reject) => {
+    if (!job_key) {
+      return reject(`Invalid param, received: job_key = ${job_key}`)
+    }
+    let user = this;
+    let index = user.jobs.findIndex(job => job.job_key === job_key)
+    if (index !== -1) {
+      user.jobs.splice(index, 1)
+      user.save(function (err, user) {
+        if (err) { return reject(err) }
+        return resolve({ jobs: user.jobs });
+      })
+    } else {
+      return reject(`user does not have a job with job_key of ${job_key}`)
+    }
+  })
+}
+
 module.exports = mongoose.model('User', UserSchema);

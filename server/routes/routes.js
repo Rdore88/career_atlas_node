@@ -8,6 +8,7 @@ router.delete('/api/user/delete', controllers.users.deleteUser);
 
 // Managing job routes
 router.post('/api/user/jobs', controllers.jobs.saveJob)
+router.delete('/api/user/delete/job', controllers.jobs.deleteJob)
 
 //For development only!
 router.get('/api/allusers', controllers.users.getAllUsers)
