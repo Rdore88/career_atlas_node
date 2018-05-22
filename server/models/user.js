@@ -38,17 +38,13 @@ UserSchema.pre('save', function(next) {
 UserSchema.methods.addJob = function(title, company, job_key, longitude, latitude, url) {
   return new Promise((resolve, reject) => {
     let user = this;
-    console.log(user);
     if (title === undefined || company === undefined || job_key === undefined || longitude === undefined || latitude === undefined || url === undefined) {
       return reject('invalide params')
     }
-    console.log("got here");
     if (user.jobs.find(job => job.job_key === job_key)) {
       return reject('User has already saved this')
     }
-    console.log("got past this shit");
     let newJob = new Job(title, company, job_key, longitude, latitude, url);
-    console.log(newJob);
     user.jobs.push(newJob);
     user.save(function (err, user){
       console.log(err);
