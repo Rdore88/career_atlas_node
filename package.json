@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Rdore88/career_atlas_node"
   },
   "author": "Robby Dore",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/Rdore88/career_atlas_node/issues"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

@@ -10,7 +10,7 @@ router.delete('/api/user/delete', controllers.users.deleteUser);
 router.post('/api/user/jobs', controllers.jobs.saveJob)
 router.delete('/api/user/delete/job', controllers.jobs.deleteJob)
 
-//For development only!
+//For development only! This will deleted when the frontend starts using the database 
 router.get('/api/allusers', controllers.users.getAllUsers)
 
 module.exports = {
