@@ -3,6 +3,7 @@ const mongoDB = require('./db/mongo')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { router } = require('./routes/routes.js');
+require('dotenv').load();
 // const User = mongoose.model('User')
 
 var app = express();
