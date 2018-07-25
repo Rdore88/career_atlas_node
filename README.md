@@ -40,6 +40,12 @@ This is just the backend so you will need to use an API development tool like [P
 
 Check out the [routes](server/routes/routes.js) to see a list of all of the available routes to use and make sure to check out the models so the correct data is being sent.
 
+### Env Variables
+In order to get some of the endpoints working you must have the correct env variables. Check out the `.env.sample` file to see what you need.
+
+### Indeed API
+You can sign up for the Indeed APi [here](https://www.indeed.com/publisher). You will need to get a publisher ID and the url for this app to work correctly.
+
 ### Testing
 
 I'm using [Jest](https://facebook.github.io/jest/) for testing. Run `npm run test` to run the testing suite
