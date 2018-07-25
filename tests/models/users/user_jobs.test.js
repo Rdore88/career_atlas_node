@@ -1,4 +1,4 @@
-const User = require('../../server/models/user');
+const User = require('../../../server/models/user');
 
 
 describe('User can manage jobs', () => {
