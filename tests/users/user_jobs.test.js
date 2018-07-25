@@ -22,17 +22,18 @@ let robby;
   it('wont create a duplicate job', () => {
     robby.addJob("software developer", "BNR", 134874392, 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")
     robby.addJob("software developer", "BNR", 134874392, 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")
+      .catch(err => {
+        expect(err).toBe("User has already saved this")
+      })
     expect(robby.jobs).toHaveLength(1)
     expect(robby.jobs[0].title).toBe("software developer")
   })
 
-  it('should reject if a duplicate tries to be made', () => {
-    robby.addJob("software developer", "BNR", 134874392, 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")
-    expect(robby.addJob("software developer", "BNR", 134874392, 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")).rejects
-  })
-
   it('should reject is there is missing info', () => {
-    expect(robby.addJob("software developer", "BNR", 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")).rejects
+    robby.addJob("software developer", "BNR", 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")
+    .catch(err => {
+      expect(err).toBe("invalide params")
+    })
   })
 
   it('should be able to delete a job', () => {
