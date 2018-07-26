@@ -3,6 +3,7 @@ const User = mongoose.model('User');
 
 
 const createUser = (req, res) => {
+  
   let user = new User(req.body)
   user.save()
   .then(user => {

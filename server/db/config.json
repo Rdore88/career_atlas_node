@@ -1,0 +1,8 @@
+{
+    "development": {
+        "mongoURL": "mongodb://localhost/CareerAtlasBackend"
+    },
+    "test": {
+        "mongoURL": "mongodb://localhost/CareerAtlasBackend_Test"
+    }
+}

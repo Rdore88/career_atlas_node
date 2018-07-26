@@ -16,5 +16,11 @@ app.use(bodyParser.json())
 app.use(logger);
 app.use('/', router)
 
+
 var port = process.env.port || 3001
-app.listen(port, () => console.log(`now listening on ${port}`));
+if (require.main === module) {
+  app.listen(port, () => console.log(`now listening on ${port}`));
+}
+
+
+module.exports = app;
