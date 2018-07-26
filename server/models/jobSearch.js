@@ -6,7 +6,7 @@ class JobSearch{
         this.jt = jobType,
         this.format = "json",
         this.st = "jobsite",
-        this.limit = 50,
+        this.limit = 30,
         this.fromage = "any", 
         this.highlight = 1,
         this. latlong = 1, 
