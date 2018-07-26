@@ -48,7 +48,7 @@ You can sign up for the Indeed APi [here](https://www.indeed.com/publisher). You
 
 ### Testing
 
-I'm using [Jest](https://facebook.github.io/jest/) for testing. Run `npm run test` to run the testing suite
+I'm using [Mocha](https://mochajs.org/), [Chai](http://www.chaijs.com/) and [Supertest](https://github.com/visionmedia/supertest) for testing. If its your first time running the tests suite make sure to install all the needed packages by running `npm install mocha chai supertest --save-dev`. Run `npm run test` to run the testing suite
 
 ## Contributing
 
