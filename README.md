@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Rdore88/career_atlas_node.svg?style=svg)](https://circleci.com/gh/Rdore88/career_atlas_node)
+
 # Career Atlas
 
 This is a new way to search for jobs! Career Atlas is a location based job search application that uses a variety of information to create a new experience.

@@ -12,7 +12,7 @@ let robby;
   it('should have an array of jobs', () => {
     expect(robby.jobs).to.be.an('array');
   })
-  
+
   it('should add a job with correct params', () => {
     robby.addJob("software developer", "BNR", 134874392, 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")
     expect(robby.jobs).to.have.lengthOf(1)
@@ -29,7 +29,7 @@ let robby;
     expect(robby.jobs[0].title).to.equal("software developer")
   })
 
-  it('should reject is there is missing info', () => {
+  it('should reject if there is missing info', () => {
     robby.addJob("software developer", "BNR", 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")
     .catch(err => {
       expect(err).to.equal("invalide params")
@@ -39,7 +39,7 @@ let robby;
   it('should be able to delete a job', () => {
     robby.addJob("software developer", "BNR", 134874392, 33.759141, -84.331937, "https://www.bignerdranch.com/about/careers/")
     expect(robby.jobs).to.have.lengthOf(1)
-    
+
     robby.deleteJob(134874392)
     expect(robby.jobs).to.have.lengthOf(0)
   })

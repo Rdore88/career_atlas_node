@@ -10,7 +10,7 @@ const saveJob = (req, res) => {
       let { title, company, job_key, longitude, latitude, url } = req.body.jobParams
       user.addJob(title, company, job_key, longitude, latitude, url)
       .then(data => res.send(data))
-      .catch(err => res.send(err))
+      .catch(err => res.send({error: err}))
     }
   })
 }
@@ -22,7 +22,7 @@ const deleteJob = (req, res) => {
     }
     user.deleteJob(req.body.job_key)
       .then(data => res.send(data))
-      .catch(err => res.send(err))
+      .catch(err => res.send({error: err}))
   })
 }
 
