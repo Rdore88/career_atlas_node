@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.7
+      - image: circleci/mongo:3.4.9
+    working_directory: ~/node_career_atlas
+    steps:
+      - checkout
+      - run:
+          name: install packages
+          command: npm install
+      - run:
+          name: run tests
+          command: npm run test
