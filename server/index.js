@@ -26,7 +26,7 @@ app.use(logger);
 app.use('/', router)
 
 
-var port = process.env.port || 3001
+var port = process.env.PORT || 3001
 if (require.main === module) {
   app.listen(port, () => console.log(`now listening on ${port}`));
 }
