@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.7
-      - image: circleci/mongo:3.4.9
+      - image: circleci/mongo:3.4
     working_directory: ~/node_career_atlas
     steps:
       - checkout
