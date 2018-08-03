@@ -12,6 +12,15 @@ var logger = (req, res, next) => {
   next();
 };
 
+// For Dev sake lol
+app.use('*', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  next();
+});
+app.options('*', (req, res) => res.sendStatus(200));
+
 app.use(bodyParser.json())
 app.use(logger);
 app.use('/', router)

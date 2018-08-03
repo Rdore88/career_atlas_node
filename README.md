@@ -28,23 +28,24 @@ $ brew upgrade node
 $ brew upgrade npm
 ```
 
+### Env Variables
+In order to get some of the endpoints working you must have the correct env variables. Check out the `.env.sample` file to see what you need.
+
+### Indeed API
+You can sign up for the Indeed APi [here](https://www.indeed.com/publisher). You will need to get a publisher ID and the url for this app to work correctly.
+
 ### To get running on your computer
 
 1. Clone this repo to your computer
 2. run `npm install` to make sure all dependencies are installed
-3. run `npm start` to start the server on localhost:3001
+3. Make sure to have all needed Env variables and accounts set up
+4. run `npm start` to start the server on localhost:3001
 
 ### How to use
 
 This is just the backend so you will need to use an API development tool like [Postman](https://www.getpostman.com/) or curl through the terminal.
 
 Check out the [routes](server/routes/routes.js) to see a list of all of the available routes to use and make sure to check out the models so the correct data is being sent.
-
-### Env Variables
-In order to get some of the endpoints working you must have the correct env variables. Check out the `.env.sample` file to see what you need.
-
-### Indeed API
-You can sign up for the Indeed APi [here](https://www.indeed.com/publisher). You will need to get a publisher ID and the url for this app to work correctly.
 
 ### Testing
 
