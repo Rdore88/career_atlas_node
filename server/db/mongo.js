@@ -9,7 +9,7 @@ mongoose.connect(Mongo[nodeEnv])
 var db = mongoose.connection;
 
 db.on('connected', () => {
-  console.log('conencted to db');
+  console.log('conencted to db', process.env.NODE_ENV);
 })
 
 db.on('error', (error) => {
